@@ -1,0 +1,261 @@
+
+@import "styles-try.css";
+/* @import url('https://fonts.googleapis.com/css2?family=IM+Fell+English&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600;700;800&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+#header {
+    background-color: transparent;
+    height: 100%;
+}
+
+
+
+
+
+/* ======================== */
+/*      C L A S S E S       */
+/* ======================== */
+.old-school {
+   font-weight: normal;
+   font-family: 'IM Fell English', serif;
+}
+
+.display-1 {
+    font-size: 4rem;
+}
+
+.display-2 {
+    font-size: 3.2rem;
+}
+
+.display-3 {
+    font-size: 1.8rem;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+[class*="col-"] {
+    display: flex;
+    flex-direction: column;
+    margin: 0;    
+    width: 100%;    
+}
+
+header {
+    height: 100vh;
+    background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ),  url("../images/stevie-ray-vaughn.jpg");
+    /* background-image: url("../images/stevie-ray-vaughn.jpg"); */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: scroll;
+    
+}
+
+
+header .row {
+    background-color: white;
+    text-shadow: .0rem .0rem .6rem rgba(0, 0, 0, 0.8) ;
+    /* box-shadow: 0rem 0.3rem 0.3rem rgba(0, 0, 0, 0.3); */
+    margin: 0;
+    display: flex;
+    padding: .01vw 4vw;
+}
+
+header p {
+    text-align: right;
+}
+
+
+
+
+/* ======================== */
+/*         T A G S          */
+/* ======================== */
+
+header .display-1 {
+    text-align: right;
+}
+
+a {
+    text-decoration: none;
+    color: steelblue;
+}
+
+p {
+    text-align: justify;
+}
+html {
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'EB Garamond', serif;
+    font-weight: normal;
+}
+
+header {
+    width: 100%;
+    margin: 0;
+    display: flexbox;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: ;
+}
+
+
+main {
+    /* background-color: hsl(29, 100%, 80%);     */
+}
+
+.container {
+    padding: .01vw 4vw;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;    
+}
+
+figure {
+    align-content: center;
+}
+
+img {
+    width: 100%;
+}
+
+footer {
+    text-align: center;
+    background-color: gray;
+    min-height: 5rem;
+}
+
+
+#hero {
+    text-align: right;
+    /* justify-content: flex-start; */
+    justify-content: space-between;
+    color: white;
+    height: 100%;    
+    /* padding-right: 15vw; */
+    /* background-color: rgba(255, 99, 71, 0.384); */
+    text-shadow: 0.1rem 0.1rem 0.5rem rgba(0, 0, 0, 0.9);
+}
+
+#hero h1 {
+    /* padding-bottom: 30vh; */
+} 
+
+/* EXTRA SMALL < 576px */
+@media (max-width: 576px){ 
+    #hero {
+        padding-top: 0rem;
+    } 
+    #hero h1, #hero h2 {
+        margin-bottom: 0rem;
+    } 
+    html {
+        /* font-size: 14px; */
+    }
+} 
+
+/* SMALL  576px-768px */
+@media (min-width: 576px){  
+    .col-sm-12 { 
+        width: 100%; 
+    }
+    #hero h1, #hero h2 {
+        margin-bottom: 1rem;
+    } 
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        margin: 2vh;
+    }
+}
+
+/* MEDIUM */
+@media (min-width: 768px){
+    .display-1 {
+        font-size: 6rem;
+    }
+    
+    .display-2 {
+        font-size: 5.5rem;
+    }
+    
+    .display-3 {
+        font-size: 4rem;
+    }  
+
+    #hero {
+        padding-bottom: 8vh;
+    }
+
+    #RIP {        
+        /* background-color: blue; */
+    }
+
+    .container {
+        max-width: 720px;
+    }
+    
+}
+
+
+
+/* LARGE */
+@media (min-width: 992px){  
+    body {
+        font-size: 1.2rem;
+    }
+    .col-lg-6 { width: 50%; }
+    .col-lg-12 { width: 100%; }
+    
+
+    #hero {
+        padding-top: 5rem;        
+    }   
+
+    #hero > * {
+        padding-right: 0;
+        margin-right: 0;
+        /* padding-bottom: 5vh; */
+        /* background-color: rgba(255, 255, 0, 0.212); */
+    }
+    main {
+        background-color: var(--cornsilk, hsl(39, 100%, 80%));
+    }
+
+    .container {
+        max-width: 960px;
+        margin: auto;            
+    }    
+}
+
+/* EXTRA   LARGE   */
+@media (min-width: 1200px){ 
+    .container {
+        max-width: 1140px;
+        margin: auto;            
+    }   
+    
+    #hero h1 {
+        padding-bottom: 20vh;
+    } 
+}
+
