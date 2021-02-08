@@ -1,261 +1,383 @@
 
-@import "styles-try.css";
-/* @import url('https://fonts.googleapis.com/css2?family=IM+Fell+English&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600;700;800&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600;700&display=swap');
+
+/* TODO: CLEAN HERE -> */
+/* TODO: CLEAN HERE <- */
+
+
+/* Moblie first */
+/* ============================= */
+/* S M A L L:           T A G S  */
+/* ============================= */
+:root { 
+    --screenPadding: 2vw; 
+    --colPadding: 2vw; 
+}
+
+@media (min-width: 576px) {
+    :root { --screenPadding: 4vw; }
+}
+
+
+/* @media (min-width: 576px) {
+    :root { --colPadding: 4vw; }
+} */
 
 * {
     box-sizing: border-box;
 }
 
-#header {
-    background-color: transparent;
+html {
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+header {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)), url('../images/stevie-ray-vaughan.jpg');
+    color: white;
+    background-position: center;
+    background-attachment: scroll;    
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+header > * {
     height: 100%;
+    /* background: rgba(0, 128, 0, 0.37); */
 }
 
-
-
-
-
-/* ======================== */
-/*      C L A S S E S       */
-/* ======================== */
-.old-school {
-   font-weight: normal;
-   font-family: 'IM Fell English', serif;
+main {
+    margin: 0;
+    padding: 0;
 }
 
-.display-1 {
-    font-size: 4rem;
+footer {
+    padding: var(--screenPadding, 2vw) var(--screenPadding, 2vw);
+    width: 100%;
+    background-color: rgb(31, 48, 63);
+    color: rgb(168, 178, 184);
+    position: relative;
+    z-index: 0;
 }
 
-.display-2 {
-    font-size: 3.2rem;
+figure {
+    width: 100%;
 }
 
-.display-3 {
-    font-size: 1.8rem;
+p {
+    text-align: justify;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family:  'EB Garamond', Georgia, 'Times New Roman', Times, serif;
+}
+
+a { color: rgb(7, 107, 102);}
+a:visited { color:  rgb(98, 134, 180); }
+
+/* ============================= */
+/* S M A L L:     C L A S S E S  */
+/* ============================= */
+
+.container {
+    margin: auto;
+    padding: 0 var(--screenPadding, 1vw);
+    max-width: 100%;
 }
 
 .row {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-between;
+
+    /*  */
+    /* display: inline-flex;
+    
+    margin: -12px 0 0 -12px;
+    width: calc(100% + 12px); */
 }
+
+/* .row > * {
+    margin: 12px 0 0 12px !important;
+} */
+/* https://coryrylan.com/blog/css-gap-space-with-flexbox */
 
 [class*="col-"] {
     display: flex;
     flex-direction: column;
-    margin: 0;    
-    width: 100%;    
+    padding: 0 var(--colPadding);
 }
 
-header {
-    height: 100vh;
-    background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ),  url("../images/stevie-ray-vaughn.jpg");
-    /* background-image: url("../images/stevie-ray-vaughn.jpg"); */
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    background-attachment: scroll;
-    
+.padding-sides {
+    padding-left: var(--colPadding);
+    padding-right: var(--colPadding);
+}
+
+.padding-top {
+    padding-top: var(--colPadding);
 }
 
 
-header .row {
-    background-color: white;
-    text-shadow: .0rem .0rem .6rem rgba(0, 0, 0, 0.8) ;
-    /* box-shadow: 0rem 0.3rem 0.3rem rgba(0, 0, 0, 0.3); */
-    margin: 0;
+/* [class*="col-"] + [class*="col-"] {
+    margin-left: 2rem;
+} */
+
+.col-12 {
     display: flex;
-    padding: .01vw 4vw;
+    flex-direction: column;
+    width: 100%;
 }
 
-header p {
-    text-align: right;
-}
-
-
-
-
-/* ======================== */
-/*         T A G S          */
-/* ======================== */
-
-header .display-1 {
-    text-align: right;
-}
-
-a {
-    text-decoration: none;
-    color: steelblue;
-}
-
-p {
-    text-align: justify;
-}
-html {
-    margin: 0;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'EB Garamond', serif;
+.display-1, .display-2, .display-3, .display-4 {
     font-weight: normal;
 }
 
-header {
+.display-1 { font-size: 3.2rem; }
+.display-2 { font-size: 2.5rem; }
+.display-3 { font-size: 2rem; }
+.display-4 { font-size: 1.6rem; }
+
+.container-video-16-9 {
     width: 100%;
-    margin: 0;
-    display: flexbox;
-    justify-content: center;
-    background-color: rgba(255, 255, 255, 0.7);
+    padding-top: 56.25%;
+    position: relative;
+    margin: 2rem 0 2rem 0; /* TODO: to correct it*/
 }
 
-body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background-color: ;
-}
-
-
-main {
-    /* background-color: hsl(29, 100%, 80%);     */
-}
-
-.container {
-    padding: .01vw 4vw;
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-    background-color: white;    
-}
-
-figure {
-    align-content: center;
-}
-
-img {
+.video-16-9 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     width: 100%;
+    height: 100%;
+    border: 0;
 }
 
-footer {
-    text-align: center;
-    background-color: gray;
-    min-height: 5rem;
+/* TODO: CLEAN HERE -> */
+#title #header{
+    position: relative;
+    animation-name: titleAnimation;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
 }
 
+/* https://medium.com/cloud-native-the-gathering/how-to-use-css-to-fade-in-and-fade-out-html-text-and-pictures-f45c11364f08 */
+@keyframes titleAnimation {
+    0% {
+        visibility: hidden;
+        top: 10vh;     
+    }    
+    30% {
+        visibility: hidden;
+        opacity: 0;
+        top: 10vh;     
+    }
+    100% {
+        opacity: 1;
+        text-shadow: .1rem .2rem .2rem rgba(0, 0, 0, 0.5);
+        top: 0;
+    }
+}
 
-#hero {
+/* @keyframes titleAnimation {
+    0% {
+        visibility: hidden;
+        color: transparent;
+        background-color: transparent;
+        text-shadow: transparent;
+        top: 15vh;     
+    }    
+    20% {
+        visibility: hidden;
+        color: transparent;
+        background-color: transparent;
+        text-shadow: .1rem .2rem .2rem rgba(0, 0, 0, 0.01);  
+        top: 15vh;     
+    }
+
+    30% {
+        color: rgba(255, 255, 255, 0.2);
+        background-color: transparent;
+        text-shadow: .1rem .2rem .2rem rgba(0, 0, 0, 0.1);   
+    }
+    
+    100% {
+        visibility: visible;
+        color: white;
+        text-shadow: .1rem .2rem .2rem rgba(0, 0, 0, 0.5);
+        top: 0;
+    }
+} */
+
+
+
+/* #title #header {
+    animation-name: headerAnimation;
+    animation-duration: 2.5s;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes titleAnimation {
+    0% {
+        top: 15vh;     
+    }    
+    30% {
+        top: 15vh;     
+    }
+    
+    100% {
+        top: 0;
+    }
+} */
+
+/* TODO: CLEAN HERE <- */
+
+/* TODO;
+pocwiczyc animacje
+ */
+
+
+/* ============================= */
+/* S M A L L:             I D S  */
+/* ============================= */
+
+#header {
+    height: 100%;
     text-align: right;
-    /* justify-content: flex-start; */
     justify-content: space-between;
-    color: white;
-    height: 100%;    
-    /* padding-right: 15vw; */
-    /* background-color: rgba(255, 99, 71, 0.384); */
-    text-shadow: 0.1rem 0.1rem 0.5rem rgba(0, 0, 0, 0.9);
+    font-family: 'IM Fell English', serif;
+    /* background-color: rgba(255, 68, 0, 0.322); */
 }
 
-#hero h1 {
-    /* padding-bottom: 30vh; */
-} 
-
-/* EXTRA SMALL < 576px */
-@media (max-width: 576px){ 
-    #hero {
-        padding-top: 0rem;
-    } 
-    #hero h1, #hero h2 {
-        margin-bottom: 0rem;
-    } 
-    html {
-        /* font-size: 14px; */
-    }
-} 
-
-/* SMALL  576px-768px */
-@media (min-width: 576px){  
-    .col-sm-12 { 
-        width: 100%; 
-    }
-    #hero h1, #hero h2 {
-        margin-bottom: 1rem;
-    } 
+#header p, #header [class*="display"] {
+    text-align: right;    
+    font-family: 'IM Fell English', serif;
+    text-shadow: .1rem .2rem .2rem rgba(0, 0, 0, 0.5);
 }
 
-@media (max-width: 768px) {
-    header h1 {
-        margin: 2vh;
-    }
+#img-div {
+    max-width: 100%;
+    float: left;
+    font-style: italic;    
+    margin: 2.4rem 0;
+    padding: 0;
 }
 
-/* MEDIUM */
-@media (min-width: 768px){
-    .display-1 {
-        font-size: 6rem;
-    }
-    
-    .display-2 {
-        font-size: 5.5rem;
-    }
-    
-    .display-3 {
-        font-size: 4rem;
-    }  
+#SRV {
+    margin-bottom: 0vh;
+}
 
-    #hero {
-        padding-bottom: 8vh;
-    }
+#RIP {
+    margin: 2vh 0;
+}
 
-    #RIP {        
-        /* background-color: blue; */
-    }
-
-    .container {
-        max-width: 720px;
-    }
-    
+#before-footer {
+    margin-bottom: 0;
+    padding-bottom: 2rem;
+    position: relative;
+    box-shadow: 0 0.5rem .3rem rgba(0, 0, 0, 0.4);
+    z-index: 10;
 }
 
 
 
-/* LARGE */
-@media (min-width: 992px){  
-    body {
-        font-size: 1.2rem;
+
+@media (max-width: 767px) {
+    .col-sm-12 {
+        max-width: 100%;
     }
-    .col-lg-6 { width: 50%; }
-    .col-lg-12 { width: 100%; }
+}
+
+/* ~~~~~~~~~~~~~~~~ */
+/*   M E D I U M    */
+/* ~~~~~~~~~~~~~~~~ */
+@media (min-width: 768px) 
+{      
+    .col-md-6 { width: 50%; }
+    .col-md-5 {width: 41.66%;}
+
+    .display-1 { font-size: 5.0rem; }
+    .display-2 { font-size: 4.0rem; }
+    .display-3 { font-size: 3.5rem; }
+    .display-4 { font-size: 2.8rem; }
+
+    #biogram {
+        margin-bottom: 2rem;
+    }
+    #img-div {
+        max-width: 50%;
+        float: left;
+    }    
+}
+
+@media (max-width: 992px) 
+{    
+    #biogram2 {
+        margin-bottom: 2rem;
+        background-color: cornflowerblue;
+        color: darkcyan;
+    }
+}
+
+/* ~~~~~~~~~~~~~~~~ */
+/*    L A R G E     */
+/* ~~~~~~~~~~~~~~~~ */
+@media (min-width: 992px) {
     
-
-    #hero {
-        padding-top: 5rem;        
-    }   
-
-    #hero > * {
-        padding-right: 0;
-        margin-right: 0;
-        /* padding-bottom: 5vh; */
-        /* background-color: rgba(255, 255, 0, 0.212); */
-    }
-    main {
-        background-color: var(--cornsilk, hsl(39, 100%, 80%));
+    footer {
+        padding: 5vw 0;
     }
 
     .container {
         max-width: 960px;
-        margin: auto;            
-    }    
+    }
+
+    .col-lg-6 { width: 50%; }
+
+    .display-1 { font-size: 5rem; }
+    .display-2 { font-size: 4rem; }
+
+    #header {
+        padding: 5vh 0;
+    }
+
+    #img-div {
+        max-width: 50%;
+        float: left;
+        margin: 9rem 0 0 0;
+    }
 }
 
-/* EXTRA   LARGE   */
-@media (min-width: 1200px){ 
+@media (min-width: 1200px) {
+    html {
+        font-size: 18px;
+    }
+
     .container {
         max-width: 1140px;
-        margin: auto;            
-    }   
-    
-    #hero h1 {
-        padding-bottom: 20vh;
-    } 
+    }
+
+    #img-div {
+        max-width: 33.3%;
+        float: left;
+        margin: 9rem 0 0 0;
+    }
 }
 
